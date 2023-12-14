@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirection</title>
+    <script>
+        function countdownRedirect() {
+            var countdown = 10;
+            var display = document.getElementById('countdown');
+
+            var timer = setInterval(function() {
+                display.textContent = countdown;
+                countdown--;
+
+                if (countdown < 0) {
+                    clearInterval(timer);
+                    window.location.href = 'https://blog.noether.fr';
+                }
+            }, 1000);
+        }
+    </script>
+</head>
+<body onload="countdownRedirect()">
+	<p>Mon blog a changé d'url pour <a href="https://blog.noether.fr">blog.noether.fr</a> vous allez être redirigé dans <span id="countdown">10</span> secondes.</p>
+</body>
+</html>
+
